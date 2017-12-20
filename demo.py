@@ -1,10 +1,4 @@
-#The optimal values of m and b can be actually calculated with way less effort than doing a linear regression. 
-#this is just to demonstrate gradient descent
-
 from numpy import *
-
-# y = mx + b
-# m is slope, b is y-intercept
 def compute_error_for_line_given_points(b, m, points):
     totalError = 0
     for i in range(0, len(points)):
@@ -38,7 +32,7 @@ def run():
     learning_rate = 0.0001
     initial_b = 0 # initial y-intercept guess
     initial_m = 0 # initial slope guess
-    num_iterations = 1000
+    num_iterations = 1000000
     print "Starting gradient descent at b = {0}, m = {1}, error = {2}".format(initial_b, initial_m, compute_error_for_line_given_points(initial_b, initial_m, points))
     print "Running..."
     [b, m] = gradient_descent_runner(points, initial_b, initial_m, learning_rate, num_iterations)
